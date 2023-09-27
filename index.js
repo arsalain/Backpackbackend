@@ -3,6 +3,7 @@ import dotenv from "dotenv"
 import mongoose from "mongoose"
 import TrekRoute from "./Routes/Trek.js"
 import TourRoute from "./Routes/Tour.js"
+import Form from "./Routes/Form.js"
 import bodyParser from "body-parser";
 import cors from "cors";
 
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 
 app.use("/uploads",express.static('uploads'))
 app.use("/trek", TrekRoute);
+app.use("/form", Form);
 app.use("/tour",TourRoute)
 
 app.use((err, req, res, next) => {
